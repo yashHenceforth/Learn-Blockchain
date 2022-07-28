@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">RR GEMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" [routerLink]="['/explore']" routerLinkActive="router-link-active">Explore</a>
+        <a class="nav-link" [routerLink]="['/collection']" routerLinkActive="router-link-active">Collection</a>
+        <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="router-link-active">FAQ</a>
+        <a class="nav-link" (click)="goForward()">LootBox</a>
+      </div>
+    </div>
+    <div class="auth-btn-section" *ngIf="!isLoggedIn">
+      <button type="button" class="btn btn-dark" (click)="openLoginDialog()">Login</button>
+      <button type="button" class="btn btn-dark" (click)="openSignUpDialog()">SignUp</button>
+    </div>
+    <div class="user-profile-section">
+
+    </div>
+  </div>
+</nav>

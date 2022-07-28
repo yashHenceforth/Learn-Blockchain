@@ -1,0 +1,44 @@
+nav.navbar {
+    height: 70px;
+    .container-fluid {
+        a.navbar-brand {
+            color: #700B97;
+            font-size: 30px;
+        }
+        div.collapse.navbar-collapse {
+            div.navbar-nav {
+                a.nav-link {
+                    color: #fff;
+                    margin-left: 50px;
+                }
+            }
+        }
+        div.auth-btn-section {
+            button.btn.btn-dark {
+                width: 100px;
+                margin: 7.5px;
+                background-color: transparent;
+                border: 1px solid #fff;
+                border-radius: 10px;
+            }
+        }
+        div.wallet-section {
+            button.btn.btn-light {
+                display: flex;
+                justify-content: space-between;
+            }
+            span.material-sysmbols-outlined {
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: center;
+    }
+}

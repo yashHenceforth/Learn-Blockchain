@@ -1,0 +1,60 @@
+div.home-section-container {
+    background-image: url(../../../../assets/Images/gems-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    height: 50vh;
+
+    div.container {
+        padding-top: 10%;
+
+        div.row {
+            div.col-md-7 {
+                h1 {
+                    span.first {
+                        font-size: 60px;
+                        color: #fff;
+                        margin-bottom: 5px;
+                    }
+
+                    span.second {
+                        font-size: 40px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.nft-collection-section {
+    h1.collection-title {
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+    div.row {
+        div.col-lg-4 {
+            div.card {
+                width: 400px;
+                margin: 0px auto;
+                border: 1px solid rgb(29, 28, 28);
+                border-radius: 7px;
+                .card-body {
+                    background-image: linear-gradient(to top left, #3E065F, #8E05C2);
+                    .card-title {
+                        color: #fff;
+                    }
+                    .card-text {
+                        color:#fff;
+                    }
+                    .btn-primary {
+                        background-color: #000000;
+                        color:#8E05C2;
+                        border:none;
+                    }
+                }
+            }
+        }
+    }
+}

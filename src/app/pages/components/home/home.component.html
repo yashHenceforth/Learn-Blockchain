@@ -1,0 +1,30 @@
+<div class="home-section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>
+                    <span class="first">Welcome, User</span>
+                    <br>
+                    <span class="second">NFT Collection Sample Project</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nft-collection-section container mt-5 mb-5">
+    <h1 class="collection-title">Collections</h1>
+   <div class="row">
+    <div class="col-lg-4" *ngFor="let item of collectionBind();">
+        <div class="card">
+            <img [src]="item.img" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                    content.</p>
+                <a href="#" class="btn btn-primary" (click)="viewCollection(item.id)">View Collection</a>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>
