@@ -18,6 +18,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { SignInOtpComponent } from './components/sign-in-otp/sign-in-otp.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,7 +43,8 @@ import { SignInOtpComponent } from './components/sign-in-otp/sign-in-otp.compone
   imports: [
     CommonModule,
     PagesRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

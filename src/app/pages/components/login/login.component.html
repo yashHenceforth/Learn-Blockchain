@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="login-container">
+    <h1>LOGIN</h1>
+    <form [formGroup]="loginForm">
+        <div class="userName-section">
+            <input type="text" placeholder="Enter Email Address" class="form-control" formControlName="userName">
+        </div>
+        <div class="password-section">
+            <input type="password" placeholder="Enter Password" class="form-control" formControlName="password">
+        </div>
+        <div class="login-btn-section">
+            <button class="btn btn-light">
+                Login
+            </button>
+        </div>
+        <div class="line" style="display: flex;">
+            <hr>
+            OR
+            <hr>
+        </div>
+        <div class="external-authentication-section">
+            <button class="btn btn-light">
+                SignUp with Ethereum
+            </button>
+            <button class="btn btn-light">
+                SignUp with Google
+            </button>
+        </div>
+    </form>
+</div>
