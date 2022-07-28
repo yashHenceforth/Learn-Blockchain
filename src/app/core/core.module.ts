@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { MenubarModule } from 'primeng/menubar';
-import { InputTextModule } from 'primeng/inputtext';
+import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
-import { SharedModule } from '../shared/shared.module';
+import { RippleModule } from 'primeng/ripple';
 
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { PagesModule } from '../pages/pages.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,10 +19,10 @@ import { PagesModule } from '../pages/pages.module';
   ],
   imports: [
     CommonModule,
-    MenubarModule,
-    InputTextModule,
+    MenuModule,
     ButtonModule,
     SharedModule,
+    RippleModule,
     DynamicDialogModule,
     PagesModule
   ],

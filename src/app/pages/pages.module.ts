@@ -19,6 +19,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { SignInOtpComponent } from './components/sign-in-otp/sign-in-otp.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -44,7 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PagesRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule
   ]
 })
 export class PagesModule { }

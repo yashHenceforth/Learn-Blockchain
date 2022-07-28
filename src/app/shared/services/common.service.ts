@@ -5,7 +5,5 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CommonService {
-
-  isLoggedIn: Subject<any> = new BehaviorSubject<any>(false);
   constructor() { }
 }

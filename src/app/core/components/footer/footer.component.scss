@@ -1,22 +1,22 @@
 footer.text-center.text-lg-start {
-    background-color: #0e0d0d;
+    background-color: #444444;
     div.container.p-4 {
         div.row {
             .col-lg-6.col-md-12.mb-4.mb-md-0 {
                 h5.text-uppercase {
-                    color: rgb(102, 102, 102);
+                    color: #EDEDED;
                 }
 
                 p {
-                    color: rgb(102, 102, 102);
+                    color: #EDEDED;
                 }
             }
         }
     }
     div.text-center.p-3 {
-        color: rgb(102, 102, 102);
+        color: #EDEDED;
         .text-dark {
-            color:rgba(102, 102, 102) !important;
+            color:#EDEDED !important;
         }
     }
 }

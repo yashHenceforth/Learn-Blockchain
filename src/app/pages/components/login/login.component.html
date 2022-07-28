@@ -1,28 +1,45 @@
+<p-toast position="bottom-center" key="tc"></p-toast>
 <div class="login-container">
     <h1>LOGIN</h1>
     <form [formGroup]="loginForm">
         <div class="userName-section">
-            <input type="text" placeholder="Enter Email Address" class="form-control" formControlName="userName">
+            <input type="text" placeholder="Enter Email Address" class="form-control" formControlName="username">
+            <div class="username-validation-section">
+                <small *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required!</small>
+                <small *ngIf="loginForm.controls['username'].hasError('pattern')">Username not valid</small>
+            </div>
         </div>
         <div class="password-section">
             <input type="password" placeholder="Enter Password" class="form-control" formControlName="password">
+            <div class="password-validation-section">
+                <small *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password is required!</small>
+                <small *ngIf="loginForm.controls['password'].hasError('pattern')">Password not valid</small>
+            </div>
         </div>
         <div class="login-btn-section">
-            <button class="btn btn-light">
+            <button class="btn btn-light" (click)="ManuallyLogin()">
                 Login
             </button>
         </div>
-        <div class="line" style="display: flex;">
-            <hr>
-            OR
-            <hr>
+        <div class="line row">
+            <div class="col-md-5">
+                <hr>
+            </div>
+            <div class="col-md-2">
+                <h5 style="text-align: center;">OR</h5>
+            </div>
+            <div class="col-md-5">
+                <hr>
+            </div>
         </div>
         <div class="external-authentication-section">
-            <button class="btn btn-light">
+            <button class="btn btn-light" (click)="LoginByEthereum()">
                 SignUp with Ethereum
+                <img class="ethereum-icon" src="../../../../assets/Images/ethereum.png">
             </button>
-            <button class="btn btn-light">
+            <button class="btn btn-light" (click)="LoginByGoogle()">
                 SignUp with Google
+                <img class="google-icon" src="../../../../assets/Images/google.png">
             </button>
         </div>
     </form>

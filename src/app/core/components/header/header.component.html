@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">RR GEMS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -7,18 +7,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" [routerLink]="['/explore']" routerLinkActive="router-link-active">Explore</a>
-        <a class="nav-link" [routerLink]="['/collection']" routerLinkActive="router-link-active">Collection</a>
-        <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="router-link-active">FAQ</a>
-        <a class="nav-link" (click)="goForward()">LootBox</a>
+        <a class="nav-link">Explore</a>
+        <a class="nav-link">Collections</a>
+        <a class="nav-link">FAQ</a>
+        <a class="nav-link">LootBox</a>
       </div>
     </div>
-    <div class="auth-btn-section" *ngIf="!isLoggedIn">
-      <button type="button" class="btn btn-dark" (click)="openLoginDialog()">Login</button>
-      <button type="button" class="btn btn-dark" (click)="openSignUpDialog()">SignUp</button>
+    <div class="auth-btn-section" *ngIf="isLoggedIn == false">
+      <button class="btn btn-dark" (click)="openLoginDialog()">Login</button>
+      <button class="btn btn-dark" (click)="openSignUpDialog()">SignUp</button>
     </div>
-    <div class="user-profile-section">
-
-    </div>
+  </div>
+  <div class="auth-user-section"  *ngIf="isLoggedIn == true">
+    <button type="button" pButton pRipple icon="pi pi-chevron-down" label="Hi, User" (click)="menu.toggle($event)"></button>
+    <p-menu #menu [popup]="true" [model]="items"></p-menu>
   </div>
 </nav>

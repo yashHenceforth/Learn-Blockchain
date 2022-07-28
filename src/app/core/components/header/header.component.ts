@@ -1,38 +1,58 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api/menuitem';
+import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { LoginComponent } from 'src/app/pages/components/login/login.component';
 import { SignUpComponent } from 'src/app/pages/components/sign-up/sign-up.component';
-import { CommonService } from 'src/app/shared/services/common.service';
-import { Web3Service } from 'src/app/shared/web3-Services/web3.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [DialogService]
 })
+
 export class HeaderComponent implements OnInit {
   
-  isLoggedIn: boolean = false;
-  accountAddress: any;
-  constructor(private commonSvc: CommonService, private web3Svc: Web3Service, private dailogSvc: DialogService) {}
+  items: MenuItem[] = [];
+  isLoggedIn: boolean = false;;
+  account:any;
+  
+  constructor(private primengConfig: PrimeNGConfig, private dialogSvc: DialogService) { }
 
   ngOnInit(): void {
-  }
-
-  goForward(): void {
-
+    this.primengConfig.ripple = true;
+    this.items = [{
+      items: [{
+        label: 'My Account',
+        icon: 'pi pi-user',
+      },
+      {
+        label: 'Wallet',
+        icon: 'pi pi-wallet',
+      },
+      {
+        label: 'Settings',
+        icon: 'pi pi-th-large',
+      },
+      {
+        label: 'Logout',
+        icon: 'pi pi-sign-out'
+      }
+      ]
+    },
+    ];
+    this.isLoggedIn = Boolean(localStorage.getItem("isLoggedIn"));
   }
 
   openLoginDialog() {
-    const loginDailogRef = this.dailogSvc.open(LoginComponent, {
-      data: [],
+    const loginDialogRef = this.dialogSvc.open(LoginComponent, {
+    })
+    loginDialogRef.onClose.subscribe((response) => {
+      console.log(response);
+      this.isLoggedIn = Boolean(localStorage.getItem("isLoggedIn"));
     })
   }
-
   openSignUpDialog() {
-    const signUpDialogRef = this.dailogSvc.open(SignUpComponent, {
-      data: []
-    })
+    const signUpDialogRef = this.dialogSvc.open(SignUpComponent, {});
   }
 }
